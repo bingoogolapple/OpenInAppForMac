@@ -126,3 +126,29 @@ Users always download the latest version from the [Releases](../../releases/late
 ## License
 
 This project is open-sourced under the [MIT License](LICENSE); feel free to use, modify, and distribute it.
+
+## Author Contact
+
+| Homepage | Email |
+| ------------- | ------------ |
+| <a  href="https://www.bingoogolapple.cn" target="_blank">bingoogolapple.cn</a>  | <a href="mailto:bingoogolapple@gmail.com" target="_blank">bingoogolapple@gmail.com</a> |
+
+| WeChat ID | WeChat Group | Official Account |
+| ------------ | ------------ | ------------ |
+| <img width="180" alt="Personal WeChat ID" src="https://github.com/bingoogolapple/bga-god-assistant-config/raw/main/images/BGAQrCode.png"> | <img width="180" alt="WeChat Group" src="https://github.com/bingoogolapple/bga-god-assistant-config/raw/main/images/WeChatGroup1QrCode.jpg"> | <img width="180" alt="Official Account" src="https://github.com/bingoogolapple/bga-god-assistant-config/raw/main/images/GongZhongHao.png"> |
+
+| Personal QQ | QQ Group |
+| ------------ | ------------ |
+| <img width="180" alt="Personal QQ ID" src="https://github.com/bingoogolapple/bga-god-assistant-config/raw/main/images/BGAQQQrCode.jpg"> | <img width="180" alt="QQ Group" src="https://github.com/bingoogolapple/bga-god-assistant-config/raw/main/images/QQGroup1QrCode.jpg"> |
+
+## Support the Author
+
+If you find the BGA series of open-source libraries or tools have saved you a lot of development time, you can scan the QR codes below to buy me a coffee. Your support will encourage me to keep creating. After donating, you can also add me on WeChat to get a free one-year membership of the [God Assistant browser extension / plugin development platform](https://github.com/bingoogolapple/bga-god-assistant-config).
+
+| WeChat | QQ | Alipay |
+| ------------- | ------------- | ------------- |
+| <img width="180" alt="WeChat" src="https://github.com/bingoogolapple/bga-god-assistant-config/raw/main/images/donate-wechat.jpg"> | <img width="180" alt="QQ" src="https://github.com/bingoogolapple/bga-god-assistant-config/raw/main/images/donate-qq.jpg"> | <img width="180" alt="Alipay" src="https://github.com/bingoogolapple/bga-god-assistant-config/raw/main/images/donate-alipay.jpg"> |
+
+## Author's Recommended Projects
+
+* Welcome to try my first indie software product, the [God Assistant browser extension / plugin development platform](https://github.com/bingoogolapple/bga-god-assistant-config)
