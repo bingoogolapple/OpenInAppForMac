@@ -1,0 +1,56 @@
+name: Release
+
+# 推送形如 v1.0.0 的 tag 时触发：在 macOS runner 上构建 .app 并打包 zip，
+# 然后自动创建对应的 GitHub Release 并上传 zip 作为下载附件。
+on:
+  push:
+    tags:
+      - 'v*'
+
+# 允许工作流创建 Release、上传附件。
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    # 必须用 macOS，osacompile / codesign / xattr 仅在 macOS 上可用。
+    runs-on: macos-latest
+    steps:
+      - name: 检出源码
+        uses: actions/checkout@v5
+
+      - name: 构建 .app 并打包 zip
+        run: ./release.sh
+
+      - name: 创建 Release 并上传 zip
+        uses: softprops/action-gh-release@v3
+        with:
+          # 从触发的 tag 自动生成 Release；把 build 目录下所有 zip 作为附件上传。
+          files: "build/*.zip"
+          generate_release_notes: true
+          # 在 Release 正文中写入安装与使用说明（与 README 保持一致），
+          # generate_release_notes 生成的提交记录会自动追加到 body 之后。
+          body: |
+            ## 安装 / Installation
+
+            **中文：**
+            1. 在下方 Assets 中下载对应的 OpenInXxx.app 文件并解压到「应用程序」目录。
+            2. 按住 `command` 键，把解压出来的 `OpenInXxx.app` 拖到 Finder 工具栏。
+
+            > 按住 `command` 拖入是为了把应用「固定」到工具栏，而不是移动文件。
+
+            > 首次点击工具栏图标若弹出「无法打开，因为无法验证开发者」的提示，这是 macOS Gatekeeper 对未做开发者签名应用的保护。处理方式二选一：右键 app → 打开；或「系统设置 → 隐私与安全性 → 仍要打开」。放行一次后即可正常使用（这些小工具没有开发者签名，属正常现象）。
+
+            **English:**
+            1. Download the desired `OpenInXxx.app` from the Assets below and unzip it into the **Applications** folder.
+            2. Hold the `command` key and drag the extracted `OpenInXxx.app` onto the Finder toolbar.
+
+            > Holding `command` while dragging "pins" the app to the toolbar instead of moving the file.
+
+            > If you see "cannot be opened because the developer cannot be verified" the first time you click the toolbar icon, that's macOS Gatekeeper protecting unsigned apps. Either right-click the app → Open, or go to **System Settings → Privacy & Security → Open Anyway**. After allowing it once, it works normally (these utilities are not developer-signed, which is normal).
+
+            ## 使用 / Usage
+
+            **中文：** 在任意 Finder 窗口中，点击工具栏上的对应图标，即可在该文件夹用对应软件打开。
+
+            **English:** In any Finder window, click the corresponding icon on the toolbar to open that folder in the matching app.
